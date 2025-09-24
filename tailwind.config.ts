@@ -47,6 +47,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Company-specific colors
+        mwanawev: {
+          teal: "hsl(var(--mwanawev-teal))",
+          orange: "hsl(var(--mwanawev-orange))",
+          "teal-light": "hsl(var(--mwanawev-teal-light))",
+          "orange-light": "hsl(var(--mwanawev-orange-light))",
+        },
+        paywega: {
+          green: "hsl(var(--paywega-green))",
+          "green-light": "hsl(var(--paywega-green-light))",
+          "green-dark": "hsl(var(--paywega-green-dark))",
+        },
+        skygiants: {
+          gold: "hsl(var(--skygiants-gold))",
+          black: "hsl(var(--skygiants-black))",
+          "gold-light": "hsl(var(--skygiants-gold-light))",
+          orange: "hsl(var(--skygiants-orange))",
+        },
+        saas: {
+          blue: "hsl(var(--saas-blue))",
+          "blue-light": "hsl(var(--saas-blue-light))",
+          "blue-dark": "hsl(var(--saas-blue-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -84,6 +107,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "slide-up": "slideUp 0.6s ease-out",
+        "fade-in-up": "fadeInUp 0.8s ease-out",
       },
     },
   },
