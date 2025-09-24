@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/paywega-hero.jpg";
+import qrPaymentImage from "@/assets/qr-payment.jpg";
+import financialInclusionImage from "@/assets/financial-inclusion.jpg";
 
 const PayWega = () => {
   const features = [
@@ -101,7 +103,7 @@ const PayWega = () => {
       {/* Solution */}
       <section className="py-20 px-4 bg-secondary/20">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div className="animate-slide-up">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Our Solution</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -119,19 +121,27 @@ const PayWega = () => {
               </Button>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
-              {features.map((feature, index) => (
-                <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4 text-primary group-hover:text-accent transition-colors flex justify-center">
-                      {feature.icon}
-                    </div>
-                    <h3 className="font-semibold mb-2 text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div>
+              <img 
+                src={qrPaymentImage} 
+                alt="QR Code Payment System" 
+                className="w-full h-80 object-cover rounded-lg shadow-elegant"
+              />
             </div>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
+                <CardContent className="p-6 text-center">
+                  <div className="mb-4 text-primary group-hover:text-accent transition-colors flex justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="font-semibold mb-2 text-foreground">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -157,31 +167,38 @@ const PayWega = () => {
               ))}
             </div>
             
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Market Impact</h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Financial Inclusion</h4>
-                    <p className="text-muted-foreground">
-                      Bringing millions of unbanked Zimbabweans into the digital financial ecosystem
-                    </p>
+            <div className="grid lg:grid-cols-2 gap-8">
+              <img 
+                src={financialInclusionImage} 
+                alt="Financial Inclusion" 
+                className="w-full h-64 object-cover rounded-lg shadow-elegant"
+              />
+              <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-6 text-primary">Market Impact</h3>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Financial Inclusion</h4>
+                      <p className="text-muted-foreground">
+                        Bringing millions of unbanked Zimbabweans into the digital financial ecosystem
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Economic Growth</h4>
+                      <p className="text-muted-foreground">
+                        Enabling data-driven business decisions and access to credit for informal traders
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Safety & Security</h4>
+                      <p className="text-muted-foreground">
+                        Reducing cash-related crimes and providing secure transaction records
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Economic Growth</h4>
-                    <p className="text-muted-foreground">
-                      Enabling data-driven business decisions and access to credit for informal traders
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Safety & Security</h4>
-                    <p className="text-muted-foreground">
-                      Reducing cash-related crimes and providing secure transaction records
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

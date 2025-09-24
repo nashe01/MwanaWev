@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/saas-hero.jpg";
+import dashboardImage from "@/assets/saas-dashboard.jpg";
+import inventoryImage from "@/assets/inventory-management.jpg";
 
 const SaasMsme = () => {
   const features = [
@@ -128,6 +130,23 @@ const SaasMsme = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive business management tools designed specifically for African MSMEs
             </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <img 
+                src={dashboardImage} 
+                alt="SaaS Dashboard Interface" 
+                className="w-full h-80 object-cover rounded-lg shadow-elegant"
+              />
+            </div>
+            <div>
+              <img 
+                src={inventoryImage} 
+                alt="Inventory Management System" 
+                className="w-full h-80 object-cover rounded-lg shadow-elegant"
+              />
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

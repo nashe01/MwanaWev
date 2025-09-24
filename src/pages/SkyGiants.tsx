@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/skygiants-hero.jpg";
+import droneShowImage from "@/assets/drone-show.jpg";
 
 const SkyGiants = () => {
   const features = [
@@ -181,19 +182,26 @@ const SkyGiants = () => {
               </div>
             </div>
             
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Why Choose Drones?</h3>
-                <div className="space-y-4">
-                  {advantages.map((advantage, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
-                      <span className="text-muted-foreground">{advantage}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div className="space-y-8">
+              <img 
+                src={droneShowImage} 
+                alt="Drone Light Show" 
+                className="w-full h-64 object-cover rounded-lg shadow-elegant"
+              />
+              <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-6 text-primary">Why Choose Drones?</h3>
+                  <div className="space-y-4">
+                    {advantages.map((advantage, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
+                        <span className="text-muted-foreground">{advantage}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

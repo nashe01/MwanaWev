@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/mwanawev-hero.jpg";
+import teamPhoto from "@/assets/team-photo.jpg";
 
 const MwanaWev = () => {
   const values = [
@@ -211,23 +212,49 @@ const MwanaWev = () => {
 
       {/* Our Team */}
       <section className="py-20 px-4 bg-secondary/20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Team</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share 
-            a common passion for creating meaningful change. Our leadership brings together decades of experience 
-            across technology, finance, and business development, while our growing team represents the best 
-            of African talent and global expertise.
-          </p>
-          <Card className="shadow-elegant max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <p className="text-lg text-muted-foreground italic">
-                "Our strength lies not just in our individual expertise, but in our collective commitment 
-                to building solutions that truly serve our communities."
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Team</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share 
+              a common passion for creating meaningful change. Our leadership brings together decades of experience 
+              across technology, finance, and business development, while our growing team represents the best 
+              of African talent and global expertise.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <img 
+                src={teamPhoto} 
+                alt="MwanaWev Leadership Team" 
+                className="w-full h-80 object-cover rounded-lg shadow-elegant"
+              />
+            </div>
+            <div className="space-y-6 text-left">
+              <h3 className="text-2xl font-bold text-primary">Leading Innovation in Africa</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Our leadership team combines expertise across fintech, technology, and business development 
+                to create solutions that address real challenges facing African businesses and communities.
               </p>
-              <div className="mt-6 text-primary font-semibold">- MwanaWev Leadership Team</div>
-            </CardContent>
-          </Card>
+              <p className="text-muted-foreground leading-relaxed">
+                From digital payment systems to sustainable entertainment solutions, our diverse expertise 
+                enables us to build comprehensive platforms that drive meaningful impact across multiple sectors.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Card className="shadow-elegant max-w-2xl mx-auto">
+              <CardContent className="p-8">
+                <p className="text-lg text-muted-foreground italic">
+                  "Our strength lies not just in our individual expertise, but in our collective commitment 
+                  to building solutions that truly serve our communities."
+                </p>
+                <div className="mt-6 text-primary font-semibold">- MwanaWev Leadership Team</div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
