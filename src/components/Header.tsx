@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
@@ -8,8 +8,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-const Header = () => {
+interface HeaderProps {
+  title: string;
+}
+
+const Header = ({ title }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const logoInitial = useMemo(() => (title?.trim()?.charAt(0) || "M").toUpperCase(), [title]);
 
   const companies = [
     { name: "MwanaWev", path: "/mwanawev", description: "Innovation Hub" },
@@ -24,9 +30,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">M</span>
+              <span className="text-primary-foreground font-bold text-lg">{logoInitial}</span>
             </div>
-            <span className="font-bold text-xl text-foreground">MwanaWev</span>
+            <span className="font-bold text-xl text-foreground">{title}</span>
           </div>
 
           <nav className="flex items-center space-x-6">

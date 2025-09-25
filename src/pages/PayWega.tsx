@@ -49,7 +49,7 @@ const PayWega = () => {
 
   return (
     <div className="theme-paywega min-h-screen">
-      <Header />
+      <Header title="PayWega" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -260,7 +260,7 @@ const PayWega = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer title="PayWega" />
     </div>
   );
 };

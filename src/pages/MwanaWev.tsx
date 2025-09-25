@@ -50,7 +50,7 @@ const MwanaWev = () => {
 
   return (
     <div className="theme-mwanawev min-h-screen">
-      <Header />
+      <Header title="MwanaWev" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -300,7 +300,7 @@ const MwanaWev = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer title="MwanaWev" />
     </div>
   );
 };

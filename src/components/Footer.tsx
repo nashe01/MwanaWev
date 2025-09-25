@@ -1,4 +1,8 @@
-const Footer = () => {
+interface FooterProps {
+  title: string;
+}
+
+const Footer = ({ title }: FooterProps) => {
   return (
     <footer className="bg-muted/30 border-t border-border mt-20">
       <div className="container mx-auto px-4 py-12">
@@ -6,9 +10,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
+                <span className="text-primary-foreground font-bold text-lg">{(title?.trim()?.charAt(0) || "M").toUpperCase()}</span>
               </div>
-              <span className="font-bold text-xl text-foreground">MwanaWev</span>
+              <span className="font-bold text-xl text-foreground">{title}</span>
             </div>
             <p className="text-muted-foreground max-w-md">
               Innovating across industries to simplify and transform business landscapes in Africa.
@@ -49,7 +53,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; 2024 MwanaWev. All rights reserved.</p>
+          <p>&copy; 2024 {title}. All rights reserved.</p>
         </div>
       </div>
     </footer>

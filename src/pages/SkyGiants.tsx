@@ -64,7 +64,7 @@ const SkyGiants = () => {
 
   return (
     <div className="theme-skygiants min-h-screen">
-      <Header />
+      <Header title="Sky Giants" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -279,7 +279,7 @@ const SkyGiants = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer title="Sky Giants" />
     </div>
   );
 };

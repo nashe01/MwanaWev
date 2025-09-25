@@ -67,7 +67,7 @@ const SaasMsme = () => {
 
   return (
     <div className="theme-saas min-h-screen">
-      <Header />
+      <Header title="SaaS for MSME" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -315,7 +315,7 @@ const SaasMsme = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer title="SaaS for MSME" />
     </div>
   );
 };
