@@ -70,9 +70,7 @@ const MwanaWev = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
             Transforming industries through innovative solutions that simplify complex challenges across Africa
           </p>
-          <Button variant="hero" className="animate-float">
-            Discover Our Companies
-          </Button>
+          
         </div>
       </section>
 

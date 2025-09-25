@@ -85,10 +85,7 @@ const SkyGiants = () => {
             Africa's Premier Drone Entertainment Experience
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" className="animate-float">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+            
             <Button variant="outline-glow" className="bg-white/10 border-white text-white hover:bg-white hover:text-foreground">
               Book Your Show
             </Button>

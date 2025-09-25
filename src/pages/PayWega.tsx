@@ -69,9 +69,7 @@ const PayWega = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
             Revolutionizing Zimbabwe's Informal Economy Through Digital Payments
           </p>
-          <Button variant="hero" className="animate-float">
-            Transform Your Business
-          </Button>
+        
         </div>
       </section>
 

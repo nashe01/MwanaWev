@@ -87,9 +87,7 @@ const SaasMsme = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
             AI-Driven Business Management for Africa's Informal Sector
           </p>
-          <Button variant="hero" className="animate-float">
-            Transform Your Business
-          </Button>
+         
         </div>
       </section>
 
