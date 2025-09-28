@@ -106,7 +106,7 @@ const MwanaWev = () => {
           <div className={`text-center mb-16 transition-all duration-600 ${
             whoWeAreVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Who We Are</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Who We Are</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               MwanaWev is a dynamic holding company that serves as an innovation hub, creating and nurturing businesses 
               that address real-world challenges through technology and creative solutions. We operate across multiple 
@@ -129,7 +129,7 @@ const MwanaWev = () => {
             <div className={`transition-all duration-600 ${
               storyVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
             }`}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Our Story</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#DB6B2E' }}>Our Story</h2>
               <p className="text-lg text-secondary-foreground/80 mb-6 leading-relaxed">
                 Founded with a vision to bridge the gap between innovation and practical application, MwanaWev began 
                 as a response to the unique challenges facing African markets. We recognized that traditional solutions 
@@ -176,7 +176,7 @@ const MwanaWev = () => {
               visionVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-30px]'
             }`}>
               <CardContent className="p-8">
-                <h3 className="text-3xl font-bold mb-6 text-primary group-hover:text-accent transition-colors">Vision</h3>
+                <h3 className="text-3xl font-bold mb-6 group-hover:text-accent transition-colors" style={{ color: '#DB6B2E' }}>Vision</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   To be Africa's leading innovation hub, creating sustainable solutions that drive economic growth 
                   and improve quality of life across the continent. We envision a future where technology serves 
@@ -189,7 +189,7 @@ const MwanaWev = () => {
               visionVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[30px]'
             }`}>
               <CardContent className="p-8">
-                <h3 className="text-3xl font-bold mb-6 text-primary group-hover:text-accent transition-colors">Mission</h3>
+                <h3 className="text-3xl font-bold mb-6 group-hover:text-accent transition-colors" style={{ color: '#DB6B2E' }}>Mission</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   To identify, develop, and scale innovative solutions that address real-world challenges, 
                   particularly within emerging markets. We are committed to fostering entrepreneurship, 
@@ -212,7 +212,7 @@ const MwanaWev = () => {
           <div className={`text-center mb-16 transition-all duration-600 ${
             valuesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Core Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Core Values</h2>
             <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
               The principles that guide every decision and shape our company culture
             </p>
@@ -250,7 +250,7 @@ const MwanaWev = () => {
           <div className={`text-center mb-16 transition-all duration-600 ${
             segmentsVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Business Segments</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Business Segments</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Diverse portfolio of companies addressing critical market needs
             </p>
@@ -270,7 +270,7 @@ const MwanaWev = () => {
                       {segment.industry}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-accent transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors" style={{ color: '#DB6B2E' }}>
                     {segment.name}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">{segment.description}</p>
@@ -292,7 +292,7 @@ const MwanaWev = () => {
           <div className={`text-center mb-16 transition-all duration-600 ${
             teamVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Our Team</h2>
             <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto leading-relaxed">
               MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share
               a common passion for creating meaningful change. Our leadership brings together decades of experience 
@@ -314,7 +314,7 @@ const MwanaWev = () => {
             <div className={`space-y-6 text-left transition-all duration-600 ${
               teamVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
             }`}>
-              <h3 className="text-2xl font-bold text-primary">Leading Innovation in Africa</h3>
+              <h3 className="text-2xl font-bold" style={{ color: '#DB6B2E' }}>Leading Innovation in Africa</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Our leadership team combines expertise across fintech, technology, and business development 
                 to create solutions that address real challenges facing African businesses and communities.
@@ -353,7 +353,7 @@ const MwanaWev = () => {
           <div className={`text-center mb-16 transition-all duration-600 ${
             futureVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Future Growth & Vision</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Future Growth & Vision</h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -376,7 +376,7 @@ const MwanaWev = () => {
               futureVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
             }`}>
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-6 text-primary">2025 Goals</h3>
+                <h3 className="text-2xl font-bold mb-6" style={{ color: '#DB6B2E' }}>2025 Goals</h3>
                 <div className="space-y-4 text-left">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
