@@ -139,9 +139,7 @@ const PayWega = () => {
                 we're transforming how informal businesses operate while promoting financial inclusion 
                 across communities.
               </p>
-              <Button variant="outline-glow">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              
             </div>
             
             <div className={`transition-all duration-600 ${
