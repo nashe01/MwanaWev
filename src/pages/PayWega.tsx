@@ -63,7 +63,7 @@ const PayWega = () => {
           <img 
             src={heroImage} 
             alt="PayWega Digital Payments" 
-            className="w-full h-full object-contain object-center"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         </div>

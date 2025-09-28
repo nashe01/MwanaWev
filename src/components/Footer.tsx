@@ -23,9 +23,9 @@ const Footer = ({ title }: FooterProps) => {
         return {
           titleColor: "text-[hsl(var(--paywega-green-dark))]",
           headingColor: "text-[hsl(var(--paywega-green))]",
-          textColor: "text-white/80",
-          linkColor: "text-white/80",
-          copyrightColor: "text-white/70"
+          textColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          linkColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          copyrightColor: "text-[hsl(var(--mwanawev-charcoal))]/70"
         };
       case "Sky Giants":
         return {
