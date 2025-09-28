@@ -355,32 +355,6 @@ const SaasMsme = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section 
-        ref={storiesRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          storiesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto text-center">
-          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
-            storiesVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
-          }`}>
-            <CardContent className="p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Digitize Your Business?</h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Join thousands of MSMEs across Africa who are transforming their operations with our 
-                AI-driven business management platform. Start your digital transformation journey today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero">Start Free Trial</Button>
-                <Button variant="outline-glow">Request Demo</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       <Footer title="SaaS for MSME" />
     </div>
   );
