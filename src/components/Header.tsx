@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/logo.png";
 
 interface HeaderProps {
   title: string;
@@ -38,9 +39,17 @@ const Header = ({ title }: HeaderProps) => {
           <div className={`flex items-center space-x-2 transition-all duration-600 ${
             isVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-30px]'
           }`}>
-            <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">{logoInitial}</span>
-            </div>
+            {title === "MwanaWev" ? (
+              <img 
+                src={logoImage} 
+                alt="MwanaWev Logo" 
+                className="w-10 h-10 object-contain"
+              />
+            ) : (
+              <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">{logoInitial}</span>
+              </div>
+            )}
             <span className="font-bold text-xl text-foreground">{title}</span>
           </div>
 
@@ -53,7 +62,7 @@ const Header = ({ title }: HeaderProps) => {
                   variant="ghost"
                   className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200"
                 >
-                  <span className="font-medium">Our Companies</span>
+                  <span className="font-bold">Business Segments</span>
                   <ChevronDown 
                     className={`h-4 w-4 transition-transform duration-200 ${
                       isOpen ? "transform rotate-180" : ""

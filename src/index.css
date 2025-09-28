@@ -1,4 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+/* 
+  TODO: When you have the ALRO BOLD font files, uncomment and update the @font-face below:
+  
+  @font-face {
+    font-family: 'Alro Bold';
+    src: url('/fonts/Alro-Bold.woff2') format('woff2'),
+         url('/fonts/Alro-Bold.woff') format('woff'),
+         url('/fonts/Alro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+*/
 
 @tailwind base;
 @tailwind components;
@@ -137,6 +152,12 @@
   html {
     font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
   }
+
+  /* ALRO BOLD for all headings - using Inter Bold as fallback until ALRO BOLD is available */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alro Bold', 'Inter', 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    font-weight: 700;
+  }
 }
 
 @layer components {
@@ -226,6 +247,12 @@
   
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  /* Utility class for ALRO BOLD font */
+  .font-heading {
+    font-family: 'Alro Bold', 'Inter', 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    font-weight: 700;
   }
 }
 

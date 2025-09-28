@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import logoImage from "@/assets/logo.png";
 
 interface FooterProps {
   title: string;
@@ -19,10 +20,18 @@ const Footer = ({ title }: FooterProps) => {
             isVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
           }`}>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">{(title?.trim()?.charAt(0) || "M").toUpperCase()}</span>
-              </div>
-              <span className="font-bold text-2xl text-white">{title}</span>
+              {title === "MwanaWev" ? (
+                <img 
+                  src={logoImage} 
+                  alt="MwanaWev Logo" 
+                  className="w-12 h-12 object-contain"
+                />
+              ) : (
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">{(title?.trim()?.charAt(0) || "M").toUpperCase()}</span>
+                </div>
+              )}
+              <span className={`font-bold text-2xl ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-charcoal))]" : "text-white"}`}>{title}</span>
             </div>
             <p className="text-white/80 max-w-md leading-relaxed">
               Innovating across industries to simplify and transform business landscapes in Africa.
@@ -37,7 +46,7 @@ const Footer = ({ title }: FooterProps) => {
           <div className={`transition-all duration-600 ${
             isVisible ? 'animate-fade-up animation-delay-400' : 'opacity-0 transform translate-y-[30px]'
           }`}>
-            <h3 className="font-semibold text-accent mb-6 text-lg">Companies</h3>
+            <h3 className={`font-semibold mb-6 text-lg ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-olive))]" : "text-accent"}`}>Companies</h3>
             <ul className="space-y-3 text-white/80">
               <li>
                 <a href="/paywega" className="hover:text-accent transition-colors duration-200 flex items-center group">
@@ -63,7 +72,7 @@ const Footer = ({ title }: FooterProps) => {
           <div className={`transition-all duration-600 ${
             isVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[30px]'
           }`}>
-            <h3 className="font-semibold text-accent mb-6 text-lg">Contact</h3>
+            <h3 className={`font-semibold mb-6 text-lg ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-olive))]" : "text-accent"}`}>Contact</h3>
             <div className="space-y-3 text-white/80">
               <p className="flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
