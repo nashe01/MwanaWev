@@ -23,9 +23,9 @@ const Header = ({ title }: HeaderProps) => {
 
   const companies = [
     { name: "MwanaWev", path: "/mwanawev", description: "Innovation Hub" },
-    { name: "PayWega", path: "/paywega", description: "FinTech Solutions" },
     { name: "Sky Giants", path: "/skygiants", description: "Drone Entertainment" },
     { name: "SaaS for MSME", path: "/saas-msme", description: "Business Management" },
+    { name: "PayWega", path: "/paywega", description: "FinTech Solutions" },
   ];
 
   return (
