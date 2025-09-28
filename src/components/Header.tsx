@@ -61,8 +61,6 @@ const Header = ({ title }: HeaderProps) => {
                   >
                     <a
                       href={company.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="w-full px-4 py-3 flex flex-col hover:no-underline"
                     >
                       <span className="font-medium text-foreground">{company.name}</span>

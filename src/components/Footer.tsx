@@ -23,20 +23,17 @@ const Footer = ({ title }: FooterProps) => {
             <h3 className="font-semibold text-foreground mb-4">Companies</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="/paywega" target="_blank" rel="noopener noreferrer" 
-                   className="hover:text-primary transition-colors">
+                <a href="/paywega" className="hover:text-primary transition-colors">
                   PayWega
                 </a>
               </li>
               <li>
-                <a href="/skygiants" target="_blank" rel="noopener noreferrer" 
-                   className="hover:text-primary transition-colors">
+                <a href="/skygiants" className="hover:text-primary transition-colors">
                   Sky Giants
                 </a>
               </li>
               <li>
-                <a href="/saas-msme" target="_blank" rel="noopener noreferrer" 
-                   className="hover:text-primary transition-colors">
+                <a href="/saas-msme" className="hover:text-primary transition-colors">
                   SaaS for MSME
                 </a>
               </li>
