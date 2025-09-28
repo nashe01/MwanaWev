@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import { Users, Target, Lightbulb, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LoadingAnimation from "@/components/LoadingAnimation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -10,8 +8,6 @@ import heroImage from "@/assets/mwanawev-hero.jpg";
 import teamPhoto from "@/assets/team-photo.jpg";
 
 const MwanaWev = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  
   const { ref: whoWeAreRef, isVisible: whoWeAreVisible } = useScrollAnimation();
   const { ref: storyRef, isVisible: storyVisible } = useScrollAnimation();
   const { ref: visionRef, isVisible: visionVisible } = useScrollAnimation();
@@ -19,15 +15,6 @@ const MwanaWev = () => {
   const { ref: segmentsRef, isVisible: segmentsVisible } = useScrollAnimation();
   const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation();
   const { ref: futureRef, isVisible: futureVisible } = useScrollAnimation();
-
-  useEffect(() => {
-    // Show loading animation on initial page load
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500); // 2.5 seconds loading time
-
-    return () => clearTimeout(timer);
-  }, []);
   const values = [
     {
       icon: <Lightbulb className="h-8 w-8" />,
@@ -68,10 +55,6 @@ const MwanaWev = () => {
       description: "AI-driven business management for small enterprises"
     }
   ];
-
-  if (isLoading) {
-    return <LoadingAnimation />;
-  }
 
   return (
     <div className="theme-mwanawev min-h-screen">
