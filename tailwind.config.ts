@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Century Gothic', 'CenturyGothic', 'AppleGothic', 'sans-serif'],
+        sans: ['CenturyGothic', 'AppleGothic', 'sans-serif'],
         heading: ['Alro Bold', 'Inter', 'Century Gothic', 'CenturyGothic', 'AppleGothic', 'sans-serif'],
       },
       colors: {
