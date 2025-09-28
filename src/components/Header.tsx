@@ -45,6 +45,14 @@ const Header = ({ title }: HeaderProps) => {
                 alt="MwanaWev Logo" 
                 className="w-10 h-10 object-contain"
               />
+            ) : title === "PayWega" ? (
+              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--paywega-green))] flex items-center justify-center">
+                <span className="text-white font-bold text-lg">P</span>
+              </div>
+            ) : title === "SaaS for MSME" ? (
+              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--saas-blue))] flex items-center justify-center">
+                <span className="text-white font-bold text-lg">S</span>
+              </div>
             ) : (
               <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">{logoInitial}</span>
