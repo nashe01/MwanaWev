@@ -100,9 +100,16 @@ const SkyGiants = () => {
       </section>
 
       {/* Innovation Story */}
-      <section className="py-20 px-4">
+      <section 
+        ref={featuresRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          featuresVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-slide-up">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            featuresVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Pioneering Entertainment</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Sky Giants specializes in customizable drone light shows, offering an innovative and sustainable 
@@ -114,7 +121,12 @@ const SkyGiants = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 group ${
+                  featuresVisible ? `animate-fade-up animation-delay-${300 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 text-primary group-hover:text-accent transition-colors flex justify-center">
                     {feature.icon}
@@ -129,9 +141,16 @@ const SkyGiants = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20 px-4 bg-secondary/20">
+      <section 
+        ref={servicesRef as any}
+        className={`py-20 px-4 bg-secondary/20 transition-all duration-800 ${
+          servicesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            servicesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Transforming events across Africa with spectacular drone light performances
@@ -140,7 +159,12 @@ const SkyGiants = () => {
           
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="shadow-elegant hover:shadow-glow transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
+                  servicesVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-colors">
@@ -157,10 +181,17 @@ const SkyGiants = () => {
       </section>
 
       {/* Technology & Innovation */}
-      <section className="py-20 px-4">
+      <section 
+        ref={techRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
+            <div className={`transition-all duration-600 ${
+              techVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Technology & Innovation</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Our drone fleet utilizes state-of-the-art LED technology and precision flight control systems 
@@ -185,7 +216,9 @@ const SkyGiants = () => {
               </div>
             </div>
             
-            <div className="space-y-8">
+            <div className={`space-y-8 transition-all duration-600 ${
+              techVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <img 
                 src={droneShowImage} 
                 alt="Drone Light Show" 
@@ -210,9 +243,16 @@ const SkyGiants = () => {
       </section>
 
       {/* Sustainability Focus */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section 
+        ref={sustainabilityRef as any}
+        className={`py-20 px-4 bg-muted/30 transition-all duration-800 ${
+          sustainabilityVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            sustainabilityVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Sustainable Entertainment</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               In an era of environmental consciousness, Sky Giants offers a revolutionary approach to celebration 
@@ -221,49 +261,53 @@ const SkyGiants = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Zero Emissions</h3>
-                <p className="text-muted-foreground">
-                  No smoke, chemicals, or pollutants released into the atmosphere
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Star className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Reusable Technology</h3>
-                <p className="text-muted-foreground">
-                  Our drones can be used thousands of times, minimizing waste
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Globe className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Wildlife Friendly</h3>
-                <p className="text-muted-foreground">
-                  Silent operation that doesn't disturb local wildlife
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: <Zap className="h-8 w-8 text-primary" />,
+                title: "Zero Emissions",
+                description: "No smoke, chemicals, or pollutants released into the atmosphere"
+              },
+              {
+                icon: <Star className="h-8 w-8 text-primary" />,
+                title: "Reusable Technology",
+                description: "Our drones can be used thousands of times, minimizing waste"
+              },
+              {
+                icon: <Globe className="h-8 w-8 text-primary" />,
+                title: "Wildlife Friendly",
+                description: "Silent operation that doesn't disturb local wildlife"
+              }
+            ].map((item, index) => (
+              <Card 
+                key={index}
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 text-center ${
+                  sustainabilityVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* African Leadership */}
-      <section className="py-20 px-4">
+      <section 
+        ref={pioneerRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          pioneerVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto text-center">
-          <Card className="shadow-elegant max-w-4xl mx-auto">
+          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
+            pioneerVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
+          }`}>
             <CardContent className="p-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Leading Africa's Entertainment Future</h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

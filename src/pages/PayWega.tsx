@@ -80,9 +80,16 @@ const PayWega = () => {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-20 px-4">
+      <section 
+        ref={problemRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          problemVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-slide-up">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            problemVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">The Challenge</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Zimbabwe's informal economy handles an estimated <strong className="text-primary">US$12 million in daily transactions</strong>, 
@@ -93,7 +100,12 @@ const PayWega = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 text-center">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 text-center ${
+                  problemVisible ? `animate-fade-up animation-delay-${300 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-8">
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
                   <p className="text-muted-foreground">{stat.label}</p>
@@ -105,10 +117,17 @@ const PayWega = () => {
       </section>
 
       {/* Solution */}
-      <section className="py-20 px-4 bg-secondary/20">
+      <section 
+        ref={solutionRef as any}
+        className={`py-20 px-4 bg-secondary/20 transition-all duration-800 ${
+          solutionVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="animate-slide-up">
+            <div className={`transition-all duration-600 ${
+              solutionVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Our Solution</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 PayWega provides a comprehensive QR-based payment system specifically designed for Zimbabwe's 
@@ -125,20 +144,29 @@ const PayWega = () => {
               </Button>
             </div>
             
-            <div className="flex justify-center">
-              <div className="w-full max-w-md aspect-square">
-                <img 
-                  src={qrPaymentImage} 
-                  alt="QR Code Payment System" 
-                  className="w-full h-full object-cover rounded-lg shadow-elegant"
-                />
+            <div className={`transition-all duration-600 ${
+              solutionVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
+              <div className="flex justify-center">
+                <div className="w-full max-w-md aspect-square">
+                  <img 
+                    src={qrPaymentImage} 
+                    alt="QR Code Payment System" 
+                    className="w-full h-full object-cover rounded-lg shadow-elegant"
+                  />
+                </div>
               </div>
             </div>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 group ${
+                  solutionVisible ? `animate-fade-up animation-delay-${600 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 text-primary group-hover:text-accent transition-colors flex justify-center">
                     {feature.icon}
@@ -153,9 +181,16 @@ const PayWega = () => {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-20 px-4">
+      <section 
+        ref={benefitsRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          benefitsVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            benefitsVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Key Benefits</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Transforming informal businesses through secure, efficient digital payment solutions
@@ -163,17 +198,25 @@ const PayWega = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
+            <div className={`space-y-6 transition-all duration-600 ${
+              benefitsVisible ? 'animate-fade-right animation-delay-400' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-4 animate-slide-up" 
-                     style={{ animationDelay: `${index * 100}ms` }}>
+                <div 
+                  key={index} 
+                  className={`flex items-start space-x-4 transition-all duration-600 ${
+                    benefitsVisible ? `animate-fade-up animation-delay-${600 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                  }`}
+                >
                   <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <p className="text-lg text-muted-foreground">{benefit}</p>
                 </div>
               ))}
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className={`grid lg:grid-cols-2 gap-8 transition-all duration-600 ${
+              benefitsVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <img 
                 src={financialInclusionImage} 
                 alt="Financial Inclusion" 
@@ -210,49 +253,65 @@ const PayWega = () => {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section 
+        ref={techRef as any}
+        className={`py-20 px-4 bg-muted/30 transition-all duration-800 ${
+          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Built for Zimbabwe</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our technology is specifically designed to work within Zimbabwe's unique infrastructure constraints, 
-            ensuring reliable service even in challenging connectivity environments.
-          </p>
+          <div className={`transition-all duration-600 ${
+            techVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Built for Zimbabwe</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+              Our technology is specifically designed to work within Zimbabwe's unique infrastructure constraints, 
+              ensuring reliable service even in challenging connectivity environments.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Mobile-First Design</h3>
-                <p className="text-muted-foreground">
-                  Works seamlessly on both smartphones and feature phones, ensuring accessibility for all users
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Offline Capability</h3>
-                <p className="text-muted-foreground">
-                  Limited offline functionality ensures transactions can continue even with poor connectivity
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Local Integration</h3>
-                <p className="text-muted-foreground">
-                  Seamless integration with existing mobile money platforms and local banking systems
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                title: "Mobile-First Design",
+                description: "Works seamlessly on both smartphones and feature phones, ensuring accessibility for all users"
+              },
+              {
+                title: "Offline Capability",
+                description: "Limited offline functionality ensures transactions can continue even with poor connectivity"
+              },
+              {
+                title: "Local Integration",
+                description: "Seamless integration with existing mobile money platforms and local banking systems"
+              }
+            ].map((tech, index) => (
+              <Card 
+                key={index}
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 ${
+                  techVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">{tech.title}</h3>
+                  <p className="text-muted-foreground">{tech.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4">
+      <section 
+        ref={techRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto text-center">
-          <Card className="shadow-elegant max-w-4xl mx-auto">
+          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
+            techVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
+          }`}>
             <CardContent className="p-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Go Digital?</h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

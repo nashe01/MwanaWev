@@ -98,9 +98,16 @@ const SaasMsme = () => {
       </section>
 
       {/* Market Opportunity */}
-      <section className="py-20 px-4">
+      <section 
+        ref={marketRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          marketVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-slide-up">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            marketVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">The Opportunity</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Our Software-as-a-Service (SaaS) platform provides AI-driven business management applications 
@@ -112,7 +119,12 @@ const SaasMsme = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
-              <Card key={index} className="shadow-elegant hover:shadow-glow transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
+                  marketVisible ? `animate-fade-up animation-delay-${300 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-8 text-center">
                   <div className="text-3xl font-bold text-primary mb-4">{solution.metrics}</div>
                   <h3 className="text-xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors">
@@ -127,9 +139,16 @@ const SaasMsme = () => {
       </section>
 
       {/* Platform Features */}
-      <section className="py-20 px-4 bg-secondary/20">
+      <section 
+        ref={featuresRef as any}
+        className={`py-20 px-4 bg-secondary/20 transition-all duration-800 ${
+          featuresVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            featuresVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Platform Features</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive business management tools designed specifically for African MSMEs
@@ -137,14 +156,18 @@ const SaasMsme = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div>
+            <div className={`transition-all duration-600 ${
+              featuresVisible ? 'animate-fade-right animation-delay-400' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <img 
                 src={dashboardImage} 
                 alt="SaaS Dashboard Interface" 
                 className="w-full h-80 object-cover rounded-lg shadow-elegant"
               />
             </div>
-            <div>
+            <div className={`transition-all duration-600 ${
+              featuresVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <img 
                 src={inventoryImage} 
                 alt="Inventory Management System" 
@@ -155,7 +178,12 @@ const SaasMsme = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 group ${
+                  featuresVisible ? `animate-fade-up animation-delay-${800 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 text-primary group-hover:text-accent transition-colors flex justify-center">
                     {feature.icon}
@@ -170,10 +198,17 @@ const SaasMsme = () => {
       </section>
 
       {/* Business Impact */}
-      <section className="py-20 px-4">
+      <section 
+        ref={impactRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          impactVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
+            <div className={`transition-all duration-600 ${
+              impactVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Business Impact</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Our platform transforms how informal businesses operate by replacing manual processes with 
@@ -198,10 +233,16 @@ const SaasMsme = () => {
               </div>
             </div>
             
-            <div className="space-y-6">
+            <div className={`space-y-6 transition-all duration-600 ${
+              impactVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-4 animate-slide-up" 
-                     style={{ animationDelay: `${index * 100}ms` }}>
+                <div 
+                  key={index} 
+                  className={`flex items-start space-x-4 transition-all duration-600 ${
+                    impactVisible ? `animate-fade-up animation-delay-${600 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                  }`}
+                >
                   <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <p className="text-lg text-muted-foreground">{benefit}</p>
                 </div>
@@ -212,9 +253,16 @@ const SaasMsme = () => {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section 
+        ref={techRef as any}
+        className={`py-20 px-4 bg-muted/30 transition-all duration-800 ${
+          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            techVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Technology Stack</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Built with cutting-edge technologies optimized for African infrastructure and connectivity constraints
@@ -223,7 +271,12 @@ const SaasMsme = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {technologies.map((tech, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 text-center">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 text-center ${
+                  techVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     {index === 0 && <Brain className="h-8 w-8 text-primary" />}
@@ -241,9 +294,16 @@ const SaasMsme = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 px-4">
+      <section 
+        ref={storiesRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          storiesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            storiesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Success Stories</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Real results from businesses transforming their operations with our platform
@@ -251,61 +311,61 @@ const SaasMsme = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <Users className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground">Mbare Flea Market</h3>
-                  <p className="text-sm text-muted-foreground">Harare, Zimbabwe</p>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "Since implementing the SaaS platform, we've reduced inventory waste by 35% and 
-                  increased our profit margins significantly. The AI recommendations help us stock 
-                  the right products at the right time."
-                </p>
-                <div className="text-primary font-semibold">+35% Profit Increase</div>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <Package className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground">Local Grocery Chain</h3>
-                  <p className="text-sm text-muted-foreground">Bulawayo, Zimbabwe</p>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "The automated inventory tracking has transformed our operations. We now have 
-                  real-time visibility into our stock levels across all locations and can make 
-                  data-driven purchasing decisions."
-                </p>
-                <div className="text-primary font-semibold">-50% Stock-outs</div>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <TrendingUp className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground">Small Retailer Network</h3>
-                  <p className="text-sm text-muted-foreground">Nationwide</p>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "The platform's analytics helped us identify our best-selling products and 
-                  optimize our supplier relationships. We've expanded to three new locations 
-                  based on the insights we gained."
-                </p>
-                <div className="text-primary font-semibold">3x Business Growth</div>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: <Users className="h-10 w-10 text-primary mb-4" />,
+                title: "Mbare Flea Market",
+                location: "Harare, Zimbabwe",
+                quote: "Since implementing the SaaS platform, we've reduced inventory waste by 35% and increased our profit margins significantly. The AI recommendations help us stock the right products at the right time.",
+                metric: "+35% Profit Increase"
+              },
+              {
+                icon: <Package className="h-10 w-10 text-primary mb-4" />,
+                title: "Local Grocery Chain",
+                location: "Bulawayo, Zimbabwe",
+                quote: "The automated inventory tracking has transformed our operations. We now have real-time visibility into our stock levels across all locations and can make data-driven purchasing decisions.",
+                metric: "-50% Stock-outs"
+              },
+              {
+                icon: <TrendingUp className="h-10 w-10 text-primary mb-4" />,
+                title: "Small Retailer Network",
+                location: "Nationwide",
+                quote: "The platform's analytics helped us identify our best-selling products and optimize our supplier relationships. We've expanded to three new locations based on the insights we gained.",
+                metric: "3x Business Growth"
+              }
+            ].map((story, index) => (
+              <Card 
+                key={index}
+                className={`shadow-elegant hover:shadow-glow transition-all duration-600 ${
+                  storiesVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
+                <CardContent className="p-8">
+                  <div className="mb-6">
+                    {story.icon}
+                    <h3 className="text-xl font-semibold text-foreground">{story.title}</h3>
+                    <p className="text-sm text-muted-foreground">{story.location}</p>
+                  </div>
+                  <p className="text-muted-foreground mb-4">{story.quote}</p>
+                  <div className="text-primary font-semibold">{story.metric}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4">
+      <section 
+        ref={storiesRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          storiesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto text-center">
-          <Card className="shadow-elegant max-w-4xl mx-auto">
+          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
+            storiesVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
+          }`}>
             <CardContent className="p-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Digitize Your Business?</h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
