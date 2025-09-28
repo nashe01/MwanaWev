@@ -3,8 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import ScrollToTopButton from "./components/ScrollToTopButton";
 import MwanaWev from "./pages/MwanaWev";
 import PayWega from "./pages/PayWega";
 import SkyGiants from "./pages/SkyGiants";
@@ -19,7 +17,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop />
         <Routes>
           <Route path="/" element={<MwanaWev />} />
           <Route path="/mwanawev" element={<MwanaWev />} />
@@ -28,7 +25,6 @@ const App = () => (
           <Route path="/saas-msme" element={<SaasMsme />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <ScrollToTopButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
