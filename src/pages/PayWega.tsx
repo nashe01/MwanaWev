@@ -301,32 +301,7 @@ const PayWega = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section 
-        ref={techRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto text-center">
-          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
-            techVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
-          }`}>
-            <CardContent className="p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Go Digital?</h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join the digital payment revolution and transform your business operations with PayWega's 
-                secure, efficient QR-based payment system.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero">Get Started Today</Button>
-                <Button variant="outline-glow">Schedule Demo</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
+  
       <Footer title="PayWega" />
     </div>
   );
