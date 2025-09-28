@@ -3,11 +3,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/paywega-hero.jpg";
 import qrPaymentImage from "@/assets/qr-payment.jpg";
 import financialInclusionImage from "@/assets/financial-inclusion.jpg";
 
 const PayWega = () => {
+  const { ref: problemRef, isVisible: problemVisible } = useScrollAnimation();
+  const { ref: solutionRef, isVisible: solutionVisible } = useScrollAnimation();
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
+  const { ref: techRef, isVisible: techVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Smartphone className="h-8 w-8" />,

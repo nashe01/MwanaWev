@@ -3,11 +3,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/saas-hero.jpg";
 import dashboardImage from "@/assets/saas-dashboard.jpg";
 import inventoryImage from "@/assets/inventory-management.jpg";
 
 const SaasMsme = () => {
+  const { ref: marketRef, isVisible: marketVisible } = useScrollAnimation();
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { ref: impactRef, isVisible: impactVisible } = useScrollAnimation();
+  const { ref: techRef, isVisible: techVisible } = useScrollAnimation();
+  const { ref: storiesRef, isVisible: storiesVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Brain className="h-8 w-8" />,

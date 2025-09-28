@@ -3,10 +3,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/mwanawev-hero.jpg";
 import teamPhoto from "@/assets/team-photo.jpg";
 
 const MwanaWev = () => {
+  const { ref: whoWeAreRef, isVisible: whoWeAreVisible } = useScrollAnimation();
+  const { ref: storyRef, isVisible: storyVisible } = useScrollAnimation();
+  const { ref: visionRef, isVisible: visionVisible } = useScrollAnimation();
+  const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
+  const { ref: segmentsRef, isVisible: segmentsVisible } = useScrollAnimation();
+  const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation();
+  const { ref: futureRef, isVisible: futureVisible } = useScrollAnimation();
   const values = [
     {
       icon: <Lightbulb className="h-8 w-8" />,
@@ -88,9 +96,16 @@ const MwanaWev = () => {
       </section>
 
       {/* Who We Are */}
-      <section className="py-20 px-4">
+      <section 
+        ref={whoWeAreRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          whoWeAreVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-slide-up">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            whoWeAreVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Who We Are</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               MwanaWev is a dynamic holding company that serves as an innovation hub, creating and nurturing businesses 
@@ -103,10 +118,17 @@ const MwanaWev = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 px-4 bg-secondary/40">
+      <section 
+        ref={storyRef as any}
+        className={`py-20 px-4 bg-secondary/40 transition-all duration-800 ${
+          storyVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
+            <div className={`transition-all duration-600 ${
+              storyVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Our Story</h2>
               <p className="text-lg text-secondary-foreground/80 mb-6 leading-relaxed">
                 Founded with a vision to bridge the gap between innovation and practical application, MwanaWev began 
@@ -121,7 +143,9 @@ const MwanaWev = () => {
                 Learn More About Our Journey
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className={`grid grid-cols-2 gap-4 transition-all duration-600 ${
+              storyVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-primary mb-2">3</div>
@@ -140,10 +164,17 @@ const MwanaWev = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 px-4">
+      <section 
+        ref={visionRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          visionVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300 group">
+            <Card className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
+              visionVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-30px]'
+            }`}>
               <CardContent className="p-8">
                 <h3 className="text-3xl font-bold mb-6 text-primary group-hover:text-accent transition-colors">Vision</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -154,7 +185,9 @@ const MwanaWev = () => {
               </CardContent>
             </Card>
             
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300 group">
+            <Card className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
+              visionVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[30px]'
+            }`}>
               <CardContent className="p-8">
                 <h3 className="text-3xl font-bold mb-6 text-primary group-hover:text-accent transition-colors">Mission</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -169,9 +202,16 @@ const MwanaWev = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 px-4 bg-secondary/30">
+      <section 
+        ref={valuesRef as any}
+        className={`py-20 px-4 bg-secondary/30 transition-all duration-800 ${
+          valuesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            valuesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Core Values</h2>
             <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
               The principles that guide every decision and shape our company culture
@@ -180,7 +220,12 @@ const MwanaWev = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group border-l-4 border-l-secondary">
+              <Card 
+                key={index} 
+                className={`shadow-card hover:shadow-elegant transition-all duration-600 group border-l-4 border-l-secondary ${
+                  valuesVisible ? `animate-fade-up animation-delay-${300 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
+                }`}
+              >
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 text-secondary group-hover:text-primary transition-colors flex justify-center">
                     {value.icon}
@@ -195,9 +240,16 @@ const MwanaWev = () => {
       </section>
 
       {/* Business Segments */}
-      <section className="py-20 px-4">
+      <section 
+        ref={segmentsRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          segmentsVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            segmentsVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Business Segments</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Diverse portfolio of companies addressing critical market needs
@@ -206,7 +258,12 @@ const MwanaWev = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {segments.map((segment, index) => (
-              <Card key={index} className="shadow-elegant hover:shadow-glow transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
+                  segmentsVisible ? `animate-fade-up animation-delay-${300 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
+                }`}
+              >
                 <CardContent className="p-8">
                   <div className="mb-4">
                     <span className="text-sm font-medium text-accent uppercase tracking-wide">
@@ -225,9 +282,16 @@ const MwanaWev = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-20 px-4 bg-secondary/40">
+      <section 
+        ref={teamRef as any}
+        className={`py-20 px-4 bg-secondary/40 transition-all duration-800 ${
+          teamVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            teamVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Team</h2>
             <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto leading-relaxed">
               MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share
@@ -238,14 +302,18 @@ const MwanaWev = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div>
+            <div className={`transition-all duration-600 ${
+              teamVisible ? 'animate-fade-right animation-delay-400' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <img 
                 src={teamPhoto} 
                 alt="MwanaWev Leadership Team" 
                 className="w-full h-80 object-cover rounded-lg shadow-elegant"
               />
             </div>
-            <div className="space-y-6 text-left">
+            <div className={`space-y-6 text-left transition-all duration-600 ${
+              teamVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <h3 className="text-2xl font-bold text-primary">Leading Innovation in Africa</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Our leadership team combines expertise across fintech, technology, and business development 
@@ -258,7 +326,9 @@ const MwanaWev = () => {
             </div>
           </div>
           
-          <div className="text-center">
+          <div className={`text-center transition-all duration-600 ${
+            teamVisible ? 'animate-scale-in animation-delay-800' : 'opacity-0 transform scale-90'
+          }`}>
             <Card className="shadow-elegant max-w-2xl mx-auto">
               <CardContent className="p-8">
                 <p className="text-lg text-muted-foreground italic">
@@ -273,14 +343,23 @@ const MwanaWev = () => {
       </section>
 
       {/* Future Growth & Vision */}
-      <section className="py-20 px-4">
+      <section 
+        ref={futureRef as any}
+        className={`py-20 px-4 transition-all duration-800 ${
+          futureVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+        }`}
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-600 ${
+            futureVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Future Growth & Vision</h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className={`transition-all duration-600 ${
+              futureVisible ? 'animate-fade-right animation-delay-400' : 'opacity-0 transform translate-x-[-50px]'
+            }`}>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 As we look to the future, MwanaWev is positioned to expand our impact across Africa and beyond. 
                 Our roadmap includes launching new ventures in emerging sectors, scaling our existing businesses 
@@ -293,7 +372,9 @@ const MwanaWev = () => {
               </p>
             </div>
             
-            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
+            <Card className={`shadow-elegant hover:shadow-glow transition-all duration-600 ${
+              futureVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
+            }`}>
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-6 text-primary">2025 Goals</h3>
                 <div className="space-y-4 text-left">

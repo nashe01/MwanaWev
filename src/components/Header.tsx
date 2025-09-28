@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 const Header = ({ title }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   const logoInitial = useMemo(() => (title?.trim()?.charAt(0) || "M").toUpperCase(), [title]);
 
@@ -25,17 +27,26 @@ const Header = ({ title }: HeaderProps) => {
   ];
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-card">
+    <header 
+      ref={ref as any}
+      className={`w-full bg-white/95 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-card transition-all duration-800 ${
+        isVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[-20px]'
+      }`}
+    >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className={`flex items-center space-x-2 transition-all duration-600 ${
+            isVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-30px]'
+          }`}>
             <div className="w-10 h-10 rounded-lg bg-hero-gradient flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">{logoInitial}</span>
             </div>
             <span className="font-bold text-xl text-foreground">{title}</span>
           </div>
 
-          <nav className="flex items-center space-x-6">
+          <nav className={`flex items-center space-x-6 transition-all duration-600 ${
+            isVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[30px]'
+          }`}>
             <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
               <DropdownMenuTrigger asChild>
                 <Button

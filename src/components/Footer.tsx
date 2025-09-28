@@ -1,13 +1,23 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 interface FooterProps {
   title: string;
 }
 
 const Footer = ({ title }: FooterProps) => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <footer className="bg-secondary/60 backdrop-blur-sm border-t border-accent/30 mt-20">
+    <footer 
+      ref={ref as any}
+      className={`bg-secondary/60 backdrop-blur-sm border-t border-accent/30 mt-20 transition-all duration-800 ${
+        isVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
+      }`}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+          <div className={`md:col-span-2 transition-all duration-600 ${
+            isVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
+          }`}>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">{(title?.trim()?.charAt(0) || "M").toUpperCase()}</span>
@@ -24,7 +34,9 @@ const Footer = ({ title }: FooterProps) => {
             </div>
           </div>
           
-          <div>
+          <div className={`transition-all duration-600 ${
+            isVisible ? 'animate-fade-up animation-delay-400' : 'opacity-0 transform translate-y-[30px]'
+          }`}>
             <h3 className="font-semibold text-accent mb-6 text-lg">Companies</h3>
             <ul className="space-y-3 text-white/80">
               <li>
@@ -48,7 +60,9 @@ const Footer = ({ title }: FooterProps) => {
             </ul>
           </div>
           
-          <div>
+          <div className={`transition-all duration-600 ${
+            isVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[30px]'
+          }`}>
             <h3 className="font-semibold text-accent mb-6 text-lg">Contact</h3>
             <div className="space-y-3 text-white/80">
               <p className="flex items-center">

@@ -3,10 +3,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/skygiants-hero.jpg";
 import droneShowImage from "@/assets/drone-show.jpg";
 
 const SkyGiants = () => {
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
+  const { ref: techRef, isVisible: techVisible } = useScrollAnimation();
+  const { ref: sustainabilityRef, isVisible: sustainabilityVisible } = useScrollAnimation();
+  const { ref: pioneerRef, isVisible: pioneerVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Sparkles className="h-8 w-8" />,
