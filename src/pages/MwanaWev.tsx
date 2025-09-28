@@ -90,20 +90,23 @@ const MwanaWev = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 px-4 bg-secondary/20">
+      <section className="py-20 px-4 bg-secondary/40">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-up">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Our Story</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-secondary-foreground/80 mb-6 leading-relaxed">
                 Founded with a vision to bridge the gap between innovation and practical application, MwanaWev began 
                 as a response to the unique challenges facing African markets. We recognized that traditional solutions 
                 often failed to address the specific needs of our communities.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-secondary-foreground/80 leading-relaxed">
                 Today, we stand as a testament to the power of local innovation, having developed solutions that not 
                 only work within our context but have the potential to transform entire industries across the continent.
               </p>
+              <Button variant="secondary" className="mt-6 bg-secondary hover:bg-secondary/80 text-secondary-foreground">
+                Learn More About Our Journey
+              </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300">
@@ -153,20 +156,20 @@ const MwanaWev = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Core Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
               The principles that guide every decision and shape our company culture
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group">
+              <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 group border-l-4 border-l-secondary">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-6 text-primary group-hover:text-accent transition-colors flex justify-center">
+                  <div className="mb-6 text-secondary group-hover:text-primary transition-colors flex justify-center">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-foreground">{value.title}</h3>
@@ -209,12 +212,12 @@ const MwanaWev = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-20 px-4 bg-secondary/20">
+      <section className="py-20 px-4 bg-secondary/40">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Team</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share 
+            <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share
               a common passion for creating meaningful change. Our leadership brings together decades of experience 
               across technology, finance, and business development, while our growing team represents the best 
               of African talent and global expertise.
