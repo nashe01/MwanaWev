@@ -7,6 +7,54 @@ interface FooterProps {
 
 const Footer = ({ title }: FooterProps) => {
   const { ref, isVisible } = useScrollAnimation();
+
+  // Get company-specific colors
+  const getCompanyColors = (companyTitle: string) => {
+    switch (companyTitle) {
+      case "MwanaWev":
+        return {
+          titleColor: "text-[hsl(var(--mwanawev-charcoal))]",
+          headingColor: "text-[hsl(var(--mwanawev-olive))]",
+          textColor: "text-white/80",
+          linkColor: "text-white/80",
+          copyrightColor: "text-white/70"
+        };
+      case "PayWega":
+        return {
+          titleColor: "text-[hsl(var(--paywega-green-dark))]",
+          headingColor: "text-[hsl(var(--paywega-green))]",
+          textColor: "text-white/80",
+          linkColor: "text-white/80",
+          copyrightColor: "text-white/70"
+        };
+      case "Sky Giants":
+        return {
+          titleColor: "text-[hsl(var(--skygiants-black))]",
+          headingColor: "text-[hsl(var(--skygiants-gold))]",
+          textColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          linkColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          copyrightColor: "text-[hsl(var(--mwanawev-charcoal))]/70"
+        };
+      case "SaaS for MSME":
+        return {
+          titleColor: "text-[hsl(var(--saas-blue-dark))]",
+          headingColor: "text-[hsl(var(--saas-blue))]",
+          textColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          linkColor: "text-[hsl(var(--mwanawev-charcoal))]/80",
+          copyrightColor: "text-[hsl(var(--mwanawev-charcoal))]/70"
+        };
+      default:
+        return {
+          titleColor: "text-white",
+          headingColor: "text-accent",
+          textColor: "text-white/80",
+          linkColor: "text-white/80",
+          copyrightColor: "text-white/70"
+        };
+    }
+  };
+
+  const colors = getCompanyColors(title);
   return (
     <footer 
       ref={ref as any}
@@ -31,9 +79,9 @@ const Footer = ({ title }: FooterProps) => {
                   <span className="text-white font-bold text-xl">{(title?.trim()?.charAt(0) || "M").toUpperCase()}</span>
                 </div>
               )}
-              <span className={`font-bold text-2xl ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-charcoal))]" : "text-white"}`}>{title}</span>
+              <span className={`font-bold text-2xl ${colors.titleColor}`}>{title}</span>
             </div>
-            <p className="text-white/80 max-w-md leading-relaxed">
+            <p className={`${colors.textColor} max-w-md leading-relaxed`}>
               Innovating across industries to simplify and transform business landscapes in Africa.
             </p>
             <div className="flex gap-3 mt-6">
@@ -46,8 +94,8 @@ const Footer = ({ title }: FooterProps) => {
           <div className={`transition-all duration-600 ${
             isVisible ? 'animate-fade-up animation-delay-400' : 'opacity-0 transform translate-y-[30px]'
           }`}>
-            <h3 className={`font-semibold mb-6 text-lg ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-olive))]" : "text-accent"}`}>Companies</h3>
-            <ul className="space-y-3 text-white/80">
+            <h3 className={`font-semibold mb-6 text-lg ${colors.headingColor}`}>Companies</h3>
+            <ul className={`space-y-3 ${colors.linkColor}`}>
               <li>
                 <a href="/paywega" className="hover:text-accent transition-colors duration-200 flex items-center group">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-110 transition-transform"></span>
@@ -72,8 +120,8 @@ const Footer = ({ title }: FooterProps) => {
           <div className={`transition-all duration-600 ${
             isVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[30px]'
           }`}>
-            <h3 className={`font-semibold mb-6 text-lg ${title === "MwanaWev" ? "text-[hsl(var(--mwanawev-olive))]" : "text-accent"}`}>Contact</h3>
-            <div className="space-y-3 text-white/80">
+            <h3 className={`font-semibold mb-6 text-lg ${colors.headingColor}`}>Contact</h3>
+            <div className={`space-y-3 ${colors.textColor}`}>
               <p className="flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                 info@mwanawev.com
@@ -87,7 +135,7 @@ const Footer = ({ title }: FooterProps) => {
         </div>
         
         <div className="border-t border-accent/20 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/70 text-center md:text-left">&copy; 2024 {title}. All rights reserved.</p>
+          <p className={`${colors.copyrightColor} text-center md:text-left`}>&copy; 2024 {title}. All rights reserved.</p>
           <div className="flex gap-2 mt-4 md:mt-0">
             <div className="w-6 h-6 rounded bg-primary/20 flex items-center justify-center">
               <div className="w-2 h-2 bg-primary rounded-full"></div>

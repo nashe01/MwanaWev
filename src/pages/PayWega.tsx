@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroImage from "@/assets/paywega-hero.jpg";
+import heroImage from "@/assets/paywega-hero.png";
 import qrPaymentImage from "@/assets/qr-payment.jpg";
 import financialInclusionImage from "@/assets/financial-inclusion.jpg";
 
@@ -63,7 +63,7 @@ const PayWega = () => {
           <img 
             src={heroImage} 
             alt="PayWega Digital Payments" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         </div>
@@ -125,12 +125,14 @@ const PayWega = () => {
               </Button>
             </div>
             
-            <div>
-              <img 
-                src={qrPaymentImage} 
-                alt="QR Code Payment System" 
-                className="w-full h-80 object-cover rounded-lg shadow-elegant"
-              />
+            <div className="flex justify-center">
+              <div className="w-full max-w-md aspect-square">
+                <img 
+                  src={qrPaymentImage} 
+                  alt="QR Code Payment System" 
+                  className="w-full h-full object-cover rounded-lg shadow-elegant"
+                />
+              </div>
             </div>
           </div>
           
