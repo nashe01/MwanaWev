@@ -19,10 +19,10 @@
     --radius: 0.75rem;
 
     /* MwanaWev - Main Company Colors */
-    --mwanawev-teal: 174 100% 29%;
-    --mwanawev-orange: 20 90% 54%;
-    --mwanawev-teal-light: 174 75% 85%;
-    --mwanawev-orange-light: 20 95% 90%;
+    --mwanawev-orange: 20 83% 55%;      /* Vibrant Orange: #ED6D29 */
+    --mwanawev-charcoal: 135 4% 23%;    /* Charcoal Gray: #363B39 */
+    --mwanawev-olive: 77 47% 31%;       /* Olive Green: #5A752A */
+    --mwanawev-sand: 40 66% 66%;        /* Golden Sand: #E3B96A */
 
     /* PayWega - FinTech Colors */
     --paywega-green: 142 71% 45%;
@@ -41,12 +41,12 @@
     --saas-blue-dark: 213 94% 45%;
 
     /* Default theme (MwanaWev) */
-    --primary: var(--mwanawev-teal);
+    --primary: var(--mwanawev-orange);
     --primary-foreground: 0 0% 98%;
-    --secondary: var(--mwanawev-teal-light);
-    --secondary-foreground: var(--mwanawev-teal);
-    --accent: var(--mwanawev-orange);
-    --accent-foreground: 0 0% 98%;
+    --secondary: var(--mwanawev-olive);
+    --secondary-foreground: 0 0% 98%;
+    --accent: var(--mwanawev-sand);
+    --accent-foreground: var(--mwanawev-charcoal);
     --muted: 220 13% 96%;
     --muted-foreground: 220 13% 46%;
     --destructive: 0 84% 60%;
@@ -135,9 +135,10 @@
 @layer components {
   /* Company Theme Classes */
   .theme-mwanawev {
-    --primary: var(--mwanawev-teal);
-    --accent: var(--mwanawev-orange);
-    --secondary: var(--mwanawev-teal-light);
+    --primary: var(--mwanawev-orange);
+    --accent: var(--mwanawev-sand);
+    --secondary: var(--mwanawev-olive);
+    --foreground: var(--mwanawev-charcoal);
   }
   
   .theme-paywega {
