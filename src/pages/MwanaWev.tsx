@@ -85,9 +85,6 @@ const MwanaWev = () => {
             Transforming industries through innovative solutions that simplify complex challenges across Africa
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Our Companies
-            </Button>
             <Button variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 text-lg font-semibold backdrop-blur-sm bg-white/10 transition-all duration-300">
               Learn More
             </Button>
