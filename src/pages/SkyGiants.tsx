@@ -320,10 +320,7 @@ const SkyGiants = () => {
                 "Every show we create tells a story, and every story we tell helps shape the future of 
                 entertainment in Africa."
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero">Book Your Show</Button>
-                <Button variant="outline-glow">Partnership Opportunities</Button>
-              </div>
+              
             </CardContent>
           </Card>
         </div>
