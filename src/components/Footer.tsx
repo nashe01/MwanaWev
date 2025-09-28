@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import logoImage from "@/assets/logo.png";
 
@@ -97,22 +98,22 @@ const Footer = ({ title }: FooterProps) => {
             <h3 className={`font-semibold mb-6 text-lg ${colors.headingColor}`}>Companies</h3>
             <ul className={`space-y-3 ${colors.linkColor}`}>
               <li>
-                <a href="/paywega" className="hover:text-accent transition-colors duration-200 flex items-center group">
+                <Link to="/paywega" className="hover:text-accent transition-colors duration-200 flex items-center group">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-110 transition-transform"></span>
                   PayWega
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/skygiants" className="hover:text-accent transition-colors duration-200 flex items-center group">
+                <Link to="/skygiants" className="hover:text-accent transition-colors duration-200 flex items-center group">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-110 transition-transform"></span>
                   Sky Giants
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/saas-msme" className="hover:text-accent transition-colors duration-200 flex items-center group">
+                <Link to="/saas-msme" className="hover:text-accent transition-colors duration-200 flex items-center group">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-110 transition-transform"></span>
                   SaaS for MSME
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

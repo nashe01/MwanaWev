@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   DropdownMenu,
@@ -87,13 +88,13 @@ const Header = ({ title }: HeaderProps) => {
                     key={company.name}
                     className="p-0 focus:bg-secondary/50 rounded-lg mx-2 my-1"
                   >
-                    <a
-                      href={company.path}
+                    <Link
+                      to={company.path}
                       className="w-full px-4 py-3 flex flex-col hover:no-underline"
                     >
                       <span className="font-medium text-foreground">{company.name}</span>
                       <span className="text-sm text-muted-foreground">{company.description}</span>
-                    </a>
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
