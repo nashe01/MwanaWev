@@ -68,8 +68,6 @@ const MwanaWev = () => {
             alt="MwanaWev Innovation" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-secondary/70 to-accent/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 animate-fade-in-up">

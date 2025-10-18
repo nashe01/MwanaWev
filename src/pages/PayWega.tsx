@@ -65,7 +65,6 @@ const PayWega = () => {
             alt="PayWega Digital Payments" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 animate-fade-in-up">

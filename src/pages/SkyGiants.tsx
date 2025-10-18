@@ -80,7 +80,6 @@ const SkyGiants = () => {
             alt="Sky Giants Drone Show" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/70"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 animate-fade-in-up">
