@@ -1,4 +1,5 @@
 import { Users, Target, Lightbulb, TrendingUp } from "lucide-react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,37 @@ const MwanaWev = () => {
       description: "Fostering sustainable development and expansion"
     }
   ];
+
+  // Typewriter effect for hero heading
+  const firstWord = "Innovate";
+  const secondWord = "Simplify";
+  const [firstText, setFirstText] = useState("");
+  const [secondText, setSecondText] = useState("");
+  const [phase, setPhase] = useState<"first" | "pause" | "second" | "done">("first");
+
+  useEffect(() => {
+    if (phase === "first") {
+      if (firstText.length < firstWord.length) {
+        const id = setTimeout(() => setFirstText(firstWord.slice(0, firstText.length + 1)), 80);
+        return () => clearTimeout(id);
+      }
+      const id = setTimeout(() => setPhase("pause"), 300);
+      return () => clearTimeout(id);
+    }
+
+    if (phase === "pause") {
+      const id = setTimeout(() => setPhase("second"), 300);
+      return () => clearTimeout(id);
+    }
+
+    if (phase === "second") {
+      if (secondText.length < secondWord.length) {
+        const id = setTimeout(() => setSecondText(secondWord.slice(0, secondText.length + 1)), 80);
+        return () => clearTimeout(id);
+      }
+      setPhase("done");
+    }
+  }, [phase, firstText, secondText]);
 
   const segments = [
     {
@@ -77,7 +109,9 @@ const MwanaWev = () => {
             </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            <span className="text-white drop-shadow-lg">Innovate</span> & <span className="text-accent drop-shadow-lg">Simplify</span>
+            <span className="text-white drop-shadow-lg">{firstText}</span>
+            {" "}&
+            <span className="text-accent drop-shadow-lg"> {secondText}</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-lg">
             Transforming industries through innovative solutions that simplify complex challenges across Africa
