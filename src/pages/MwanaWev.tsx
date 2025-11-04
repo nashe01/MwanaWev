@@ -149,7 +149,7 @@ const MwanaWev = () => {
       {/* Our Story */}
       <section 
         ref={storyRef as any}
-        className={`py-20 px-4 bg-secondary/40 transition-all duration-800 ${
+        className={`py-20 px-4 bg-[hsl(var(--mwanawev-charcoal))] transition-all duration-800 ${
           storyVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
         }`}
       >
@@ -159,12 +159,12 @@ const MwanaWev = () => {
               storyVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
             }`}>
               <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#DB6B2E' }}>Our Story</h2>
-              <p className="text-lg text-secondary-foreground/80 mb-6 leading-relaxed">
+              <p className="text-lg text-white/80 mb-6 leading-relaxed">
                 Founded with a vision to bridge the gap between innovation and practical application, MwanaWev began 
                 as a response to the unique challenges facing African markets. We recognized that traditional solutions 
                 often failed to address the specific needs of our communities.
               </p>
-              <p className="text-lg text-secondary-foreground/80 leading-relaxed">
+              <p className="text-lg text-white/80 leading-relaxed">
                 Today, we stand as a testament to the power of local innovation, having developed solutions that not 
                 only work within our context but have the potential to transform entire industries across the continent.
               </p>
@@ -233,7 +233,7 @@ const MwanaWev = () => {
       {/* Core Values */}
       <section 
         ref={valuesRef as any}
-        className={`py-20 px-4 bg-secondary/30 transition-all duration-800 ${
+        className={`py-20 px-4 bg-[hsl(var(--mwanawev-charcoal))] transition-all duration-800 ${
           valuesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
         }`}
       >
@@ -242,7 +242,7 @@ const MwanaWev = () => {
             valuesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Core Values</h2>
-            <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
               The principles that guide every decision and shape our company culture
             </p>
           </div>
@@ -313,7 +313,7 @@ const MwanaWev = () => {
       {/* Our Team */}
       <section 
         ref={teamRef as any}
-        className={`py-20 px-4 bg-secondary/40 transition-all duration-800 ${
+        className={`py-20 px-4 bg-[hsl(var(--mwanawev-charcoal))] transition-all duration-800 ${
           teamVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
         }`}
       >
@@ -322,7 +322,7 @@ const MwanaWev = () => {
             teamVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#DB6B2E' }}>Our Team</h2>
-            <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               MwanaWev is powered by a diverse team of innovators, entrepreneurs, and industry experts who share
               a common passion for creating meaningful change. Our leadership brings together decades of experience 
               across technology, finance, and business development, while our growing team represents the best 
@@ -344,11 +344,11 @@ const MwanaWev = () => {
               teamVisible ? 'animate-fade-left animation-delay-600' : 'opacity-0 transform translate-x-[50px]'
             }`}>
               <h3 className="text-2xl font-bold" style={{ color: '#DB6B2E' }}>Leading Innovation in Africa</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 Our leadership team combines expertise across fintech, technology, and business development 
                 to create solutions that address real challenges facing African businesses and communities.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 From digital payment systems to sustainable entertainment solutions, our diverse expertise 
                 enables us to build comprehensive platforms that drive meaningful impact across multiple sectors.
               </p>
