@@ -25,11 +25,11 @@
   :root {
     /* Base colors */
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 0%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 0%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 174 100% 29%;
@@ -65,7 +65,7 @@
     --accent: var(--mwanawev-sand);
     --accent-foreground: var(--mwanawev-charcoal);
     --muted: 220 13% 96%;
-    --muted-foreground: 220 13% 46%;
+    --muted-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
@@ -166,7 +166,7 @@
     --primary: var(--mwanawev-orange);
     --accent: var(--mwanawev-sand);
     --secondary: var(--mwanawev-olive);
-    --foreground: var(--mwanawev-charcoal);
+    --foreground: 0 0% 0%;
   }
   
   .theme-paywega {
@@ -179,7 +179,7 @@
     --primary: var(--skygiants-gold);
     --accent: var(--skygiants-orange);
     --secondary: var(--skygiants-gold-light);
-    --foreground: var(--skygiants-black);
+    --foreground: 0 0% 0%;
   }
   
   .theme-saas {
