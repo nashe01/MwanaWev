@@ -1,7 +1,6 @@
-import { BarChart3, Brain, Package, Users, TrendingUp, CheckCircle, Smartphone, Cloud } from "lucide-react";
+import { BarChart3, Brain, Package, CheckCircle, Smartphone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/saas-hero.jpg";
@@ -12,8 +11,6 @@ const SaasMsme = () => {
   const { ref: marketRef, isVisible: marketVisible } = useScrollAnimation();
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: impactRef, isVisible: impactVisible } = useScrollAnimation();
-  const { ref: techRef, isVisible: techVisible } = useScrollAnimation();
-  const { ref: storiesRef, isVisible: storiesVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Brain className="h-8 w-8" />,
@@ -62,13 +59,6 @@ const SaasMsme = () => {
     "Access micro-financing opportunities through data",
     "Connect with suppliers and customers digitally",
     "Scale operations with data-driven decisions"
-  ];
-
-  const technologies = [
-    { name: "Artificial Intelligence", description: "Machine learning for predictive analytics" },
-    { name: "Cloud Computing", description: "Scalable infrastructure for growing businesses" },
-    { name: "Mobile Technology", description: "Native apps for Android and feature phones" },
-    { name: "Data Analytics", description: "Business intelligence and reporting tools" }
   ];
 
   return (
@@ -247,109 +237,6 @@ const SaasMsme = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack */}
-      <section 
-        ref={techRef as any}
-        className={`py-20 px-4 bg-muted/30 transition-all duration-800 ${
-          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-600 ${
-            techVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Technology Stack</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Built with cutting-edge technologies optimized for African infrastructure and connectivity constraints
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <Card 
-                key={index} 
-                className={`shadow-card hover:shadow-elegant transition-all duration-600 text-center ${
-                  techVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
-                }`}
-              >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    {index === 0 && <Brain className="h-8 w-8 text-primary" />}
-                    {index === 1 && <Cloud className="h-8 w-8 text-primary" />}
-                    {index === 2 && <Smartphone className="h-8 w-8 text-primary" />}
-                    {index === 3 && <BarChart3 className="h-8 w-8 text-primary" />}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{tech.name}</h3>
-                  <p className="text-muted-foreground">{tech.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section 
-        ref={storiesRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          storiesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-600 ${
-            storiesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Success Stories</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real results from businesses transforming their operations with our platform
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Users className="h-10 w-10 text-primary mb-4" />,
-                title: "Mbare Flea Market",
-                location: "Harare, Zimbabwe",
-                quote: "Since implementing the SaaS platform, we've reduced inventory waste by 35% and increased our profit margins significantly. The AI recommendations help us stock the right products at the right time.",
-                metric: "+35% Profit Increase"
-              },
-              {
-                icon: <Package className="h-10 w-10 text-primary mb-4" />,
-                title: "Local Grocery Chain",
-                location: "Bulawayo, Zimbabwe",
-                quote: "The automated inventory tracking has transformed our operations. We now have real-time visibility into our stock levels across all locations and can make data-driven purchasing decisions.",
-                metric: "-50% Stock-outs"
-              },
-              {
-                icon: <TrendingUp className="h-10 w-10 text-primary mb-4" />,
-                title: "Small Retailer Network",
-                location: "Nationwide",
-                quote: "The platform's analytics helped us identify our best-selling products and optimize our supplier relationships. We've expanded to three new locations based on the insights we gained.",
-                metric: "3x Business Growth"
-              }
-            ].map((story, index) => (
-              <Card 
-                key={index}
-                className={`shadow-elegant hover:shadow-glow transition-all duration-600 ${
-                  storiesVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
-                }`}
-              >
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    {story.icon}
-                    <h3 className="text-xl font-semibold text-foreground">{story.title}</h3>
-                    <p className="text-sm text-muted-foreground">{story.location}</p>
-                  </div>
-                  <p className="text-muted-foreground mb-4">{story.quote}</p>
-                  <div className="text-primary font-semibold">{story.metric}</div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

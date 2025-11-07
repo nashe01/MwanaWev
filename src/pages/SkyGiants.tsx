@@ -1,327 +1,237 @@
-import { Zap, Star, Globe, Sparkles, Play, Calendar, Users } from "lucide-react";
+import { Plane, Sparkles, Sprout, Globe, Zap, Star } from "lucide-react";
+import { FadeIn, ParallaxSection } from "@/components/Animation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroImage from "@/assets/skygiants-hero.jpg";
-import droneShowImage from "@/assets/drone-show.jpg";
+import { Button } from "@/components/ui/button";
+import skyGiantsVideo from "@/assets/sky-giants.mp4";
+import droneAgriculture from "@/assets/drone-agriculture.jpg";
 
 const SkyGiants = () => {
-  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
-  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
-  const { ref: techRef, isVisible: techVisible } = useScrollAnimation();
-  const { ref: sustainabilityRef, isVisible: sustainabilityVisible } = useScrollAnimation();
-  const { ref: pioneerRef, isVisible: pioneerVisible } = useScrollAnimation();
-  const features = [
-    {
-      icon: <Sparkles className="h-8 w-8" />,
-      title: "Customizable Shows",
-      description: "Tailored drone performances for any event or celebration"
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Eco-Friendly",
-      description: "Sustainable alternative to traditional fireworks with zero emissions"
-    },
-    {
-      icon: <Star className="h-8 w-8" />,
-      title: "Spectacular Displays",
-      description: "Breathtaking aerial choreography that captivates audiences"
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "African Pioneer",
-      description: "First drone entertainment company of its kind in Africa"
-    }
-  ];
-
   const services = [
     {
-      title: "Corporate Events",
-      description: "Product launches, brand activations, and corporate celebrations",
-      icon: <Users className="h-6 w-6" />
+      icon: Sparkles,
+      title: "Drone Light Shows",
+      description: "Breathtaking, customizable aerial displays for concerts, festivals, and national events",
+      category: "Entertainment",
     },
     {
-      title: "Weddings & Celebrations",
-      description: "Romantic and memorable moments for special occasions",
-      icon: <Star className="h-6 w-6" />
+      icon: Sprout,
+      title: "Precision Spraying",
+      description: "Efficient crop treatment with minimal waste and environmental impact",
+      category: "Agriculture",
     },
     {
-      title: "Public Festivals",
-      description: "Large-scale entertainment for cultural and music festivals",
-      icon: <Calendar className="h-6 w-6" />
+      icon: Globe,
+      title: "Crop Mapping",
+      description: "Detailed aerial analytics for informed farming decisions",
+      category: "Agriculture",
     },
-    {
-      title: "Tourism Attractions",
-      description: "Regular shows for hotels, resorts, and tourist destinations",
-      icon: <Globe className="h-6 w-6" />
-    }
-  ];
-
-  const advantages = [
-    "No fire hazards or safety concerns",
-    "Weather-independent performances",
-    "Programmable and repeatable shows",
-    "Music synchronization capabilities",
-    "Minimal environmental impact",
-    "Suitable for noise-sensitive areas"
   ];
 
   return (
-    <div className="theme-skygiants min-h-screen">
+    <div className="min-h-screen">
       <Header title="Sky Giants" />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Sky Giants Drone Show" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="relative z-10 text-center px-4 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-            Sky Giants
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-            Africa's Premier Drone Entertainment Experience
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <Button variant="outline-glow" className="bg-white/10 border-white text-white hover:bg-white hover:text-foreground">
-              Book Your Show
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Innovation Story */}
-      <section 
-        ref={featuresRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          featuresVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-600 ${
-            featuresVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Pioneering Entertainment</h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Sky Giants specializes in customizable drone light shows, offering an innovative and sustainable 
-              alternative to traditional fireworks. As the <strong className="text-primary">first company of its kind in Africa</strong>, 
-              we're focused on delivering unique aerial spectacles that combine cutting-edge technology with 
-              breathtaking artistry.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card 
-                key={index} 
-                className={`shadow-card hover:shadow-elegant transition-all duration-600 group ${
-                  featuresVisible ? `animate-fade-up animation-delay-${300 + (index * 100)}` : 'opacity-0 transform translate-y-[30px]'
-                }`}
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="mb-6 text-primary group-hover:text-accent transition-colors flex justify-center">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section 
-        ref={servicesRef as any}
-        className={`py-20 px-4 bg-secondary/20 transition-all duration-800 ${
-          servicesVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-600 ${
-            servicesVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transforming events across Africa with spectacular drone light performances
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className={`shadow-elegant hover:shadow-glow transition-all duration-600 group ${
-                  servicesVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
-                }`}
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-colors">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology & Innovation */}
-      <section 
-        ref={techRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          techVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className={`transition-all duration-600 ${
-              techVisible ? 'animate-fade-right animation-delay-200' : 'opacity-0 transform translate-x-[-50px]'
-            }`}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">Technology & Innovation</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Our drone fleet utilizes state-of-the-art LED technology and precision flight control systems 
-                to create stunning visual displays. Each drone is equipped with customizable lighting that can 
-                produce millions of colors and patterns, synchronized to music and choreographed for maximum impact.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Advanced GPS positioning, real-time communication systems, and automated safety protocols ensure 
-                every show is both spectacular and secure, meeting international aviation standards while 
-                delivering unforgettable experiences.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">200+</div>
-                  <p className="text-muted-foreground">Drones in Fleet</p>
+      {/* Hero Section - Night Sky Theme */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-24 text-white">
+        <ParallaxSection offset={40}>
+          <div className="container relative z-10">
+            <FadeIn>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur">
+                  <Plane className="h-8 w-8" />
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
-                  <p className="text-muted-foreground">Shows Delivered</p>
-                </div>
+                <h1 className="font-arlo text-5xl font-bold md:text-7xl">Sky Giants</h1>
               </div>
-            </div>
-            
-            <div className={`space-y-8 transition-all duration-600 ${
-              techVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0 transform translate-x-[50px]'
-            }`}>
-              <img 
-                src={droneShowImage} 
-                alt="Drone Light Show" 
-                className="w-full h-64 object-cover rounded-lg shadow-elegant"
+              <p className="mb-4 max-w-3xl text-2xl md:text-3xl">
+                Lighting the Sky, Empowering the Land
+              </p>
+              <p className="mb-8 max-w-2xl text-lg opacity-80">
+                Africa's first integrated drone services company
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-white text-indigo-900 hover:bg-white/90">
+                  Entertainment Services
+                </Button>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  Agriculture Solutions
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </ParallaxSection>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-cyan-400/20 via-transparent to-transparent" />
+          <div className="absolute inset-0 animate-pulse opacity-30">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute h-1 w-1 rounded-full bg-white"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                }}
               />
-              <Card className="shadow-elegant hover:shadow-glow transition-all duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-6 text-primary">Why Choose Drones?</h3>
-                  <div className="space-y-4">
-                    {advantages.map((advantage, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
-                        <span className="text-muted-foreground">{advantage}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sustainability Focus */}
-      <section 
-        ref={sustainabilityRef as any}
-        className={`py-20 px-4 bg-muted/30 transition-all duration-800 ${
-          sustainabilityVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-600 ${
-            sustainabilityVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Sustainable Entertainment</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              In an era of environmental consciousness, Sky Giants offers a revolutionary approach to celebration 
-              and entertainment that doesn't compromise our planet's future.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="h-8 w-8 text-primary" />,
-                title: "Zero Emissions",
-                description: "No smoke, chemicals, or pollutants released into the atmosphere"
-              },
-              {
-                icon: <Star className="h-8 w-8 text-primary" />,
-                title: "Reusable Technology",
-                description: "Our drones can be used thousands of times, minimizing waste"
-              },
-              {
-                icon: <Globe className="h-8 w-8 text-primary" />,
-                title: "Wildlife Friendly",
-                description: "Silent operation that doesn't disturb local wildlife"
-              }
-            ].map((item, index) => (
-              <Card 
-                key={index}
-                className={`shadow-card hover:shadow-elegant transition-all duration-600 text-center ${
-                  sustainabilityVisible ? `animate-fade-up animation-delay-${400 + (index * 200)}` : 'opacity-0 transform translate-y-[40px]'
-                }`}
-              >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* African Leadership */}
-      <section 
-        ref={pioneerRef as any}
-        className={`py-20 px-4 transition-all duration-800 ${
-          pioneerVisible ? 'animate-fade-up' : 'opacity-0 transform translate-y-[50px]'
-        }`}
-      >
-        <div className="container mx-auto text-center">
-          <Card className={`shadow-elegant max-w-4xl mx-auto transition-all duration-600 ${
-            pioneerVisible ? 'animate-scale-in animation-delay-400' : 'opacity-0 transform scale-90'
-          }`}>
-            <CardContent className="p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Leading Africa's Entertainment Future</h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-                As Africa's first drone entertainment company, Sky Giants is proudly setting new standards for 
-                celebration and spectacle across the continent. We're not just adapting global trends – we're 
-                creating uniquely African experiences that celebrate our culture, stories, and aspirations 
-                through the language of light and motion.
+      {/* Main Description */}
+      <section className="py-24">
+        <div className="container">
+          <FadeIn>
+            <div className="mx-auto max-w-4xl text-center">
+              <h2 className="mb-6 font-arlo text-4xl font-bold md:text-5xl">
+                Pioneering Innovation in Entertainment & Agriculture
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Sky Giants is Africa's first integrated drone services company, pioneering innovation in both 
+                entertainment and agriculture through cutting-edge aerial technology.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto italic">
-                "Every show we create tells a story, and every story we tell helps shape the future of 
-                entertainment in Africa."
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Entertainment Section */}
+      <section className="bg-gradient-to-br from-purple-50 to-indigo-50 py-24">
+        <div className="container">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <FadeIn>
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-700">
+                  <Sparkles className="h-4 w-4" />
+                  Entertainment
+                </div>
+                <h2 className="mb-6 font-arlo text-4xl font-bold md:text-5xl">
+                  Spectacular Drone Light Shows
+                </h2>
+                <p className="mb-6 text-lg text-muted-foreground">
+                  We deliver breathtaking, customisable drone light shows — a sustainable, visually captivating 
+                  alternative to fireworks for concerts, festivals, and national events.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Eco-friendly alternative to fireworks",
+                    "Fully customizable formations and colors",
+                    "Synchronized to music and events",
+                    "Safe for all weather conditions",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <Star className="mt-1 h-5 w-5 flex-shrink-0 text-purple-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl">
+                <video
+                  src={skyGiantsVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Agriculture Section */}
+      <section className="py-24">
+        <div className="container">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <FadeIn delay={0.2}>
+              <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src={droneAgriculture} 
+                  alt="Agricultural drone performing precision spraying over crops" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-700">
+                  <Sprout className="h-4 w-4" />
+                  Agriculture
+                </div>
+                <h2 className="mb-6 font-arlo text-4xl font-bold md:text-5xl">
+                  Precision Agriculture Solutions
+                </h2>
+                <p className="mb-6 text-lg text-muted-foreground">
+                  We use drones for precision spraying, crop mapping, and aerial analytics — empowering farmers 
+                  to increase productivity and sustainability.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Efficient precision spraying with minimal waste",
+                    "Detailed crop health monitoring",
+                    "Real-time aerial analytics",
+                    "Increased yield and sustainability",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <Zap className="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="bg-slate-50 py-24">
+        <div className="container">
+          <FadeIn>
+            <h2 className="mb-12 text-center font-arlo text-4xl font-bold md:text-5xl">Our Services</h2>
+          </FadeIn>
+          <div className="grid gap-8 md:grid-cols-3">
+            {services.map((service, index) => (
+              <FadeIn key={service.title} delay={index * 0.1}>
+                <Card className="h-full transition-all hover:shadow-xl">
+                  <CardContent className="p-8">
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
+                      {service.category}
+                    </div>
+                    <service.icon className="mb-4 h-12 w-12 text-indigo-600" />
+                    <h3 className="mb-2 font-arlo text-xl font-bold">{service.title}</h3>
+                    <p className="text-muted-foreground">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 py-24 text-white">
+        <div className="container">
+          <FadeIn>
+            <div className="mx-auto max-w-4xl text-center">
+              <Globe className="mx-auto mb-6 h-16 w-16" />
+              <h2 className="mb-6 font-arlo text-4xl font-bold md:text-5xl">
+                Driving Africa's Technological Evolution
+              </h2>
+              <p className="text-xl opacity-90">
+                Our dual mission is to light up the skies while empowering the ground, driving Africa's 
+                technological evolution through drone-based innovation. We're not just providing services — 
+                we're shaping the future of entertainment and agriculture.
               </p>
-              
-            </CardContent>
-          </Card>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
