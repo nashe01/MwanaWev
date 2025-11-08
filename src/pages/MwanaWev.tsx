@@ -1,11 +1,10 @@
 import { Users, Target, Lightbulb, TrendingUp } from "lucide-react";
-import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroImage from "@/assets/mwanawev-hero.jpg";
+import heroImage from "@/assets/hero1.jpg";
 import teamPhoto from "@/assets/team-photo.jpg";
 
 const MwanaWev = () => {
@@ -39,36 +38,6 @@ const MwanaWev = () => {
     }
   ];
 
-  // Typewriter effect for hero heading
-  const firstWord = "Innovate";
-  const secondWord = "Simplify";
-  const [firstText, setFirstText] = useState("");
-  const [secondText, setSecondText] = useState("");
-  const [phase, setPhase] = useState<"first" | "pause" | "second" | "done">("first");
-
-  useEffect(() => {
-    if (phase === "first") {
-      if (firstText.length < firstWord.length) {
-        const id = setTimeout(() => setFirstText(firstWord.slice(0, firstText.length + 1)), 80);
-        return () => clearTimeout(id);
-      }
-      const id = setTimeout(() => setPhase("pause"), 300);
-      return () => clearTimeout(id);
-    }
-
-    if (phase === "pause") {
-      const id = setTimeout(() => setPhase("second"), 300);
-      return () => clearTimeout(id);
-    }
-
-    if (phase === "second") {
-      if (secondText.length < secondWord.length) {
-        const id = setTimeout(() => setSecondText(secondWord.slice(0, secondText.length + 1)), 80);
-        return () => clearTimeout(id);
-      }
-      setPhase("done");
-    }
-  }, [phase, firstText, secondText]);
 
   const segments = [
     {
@@ -103,24 +72,6 @@ const MwanaWev = () => {
         </div>
         
         <div className="relative z-10 text-center px-4 animate-fade-in-up">
-          <div className="mb-6">
-            <span className="inline-block px-6 py-2 bg-accent/20 backdrop-blur-sm rounded-full text-accent font-medium border border-accent/30">
-              Innovation Hub
-            </span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            <span className="text-white drop-shadow-lg">{firstText}</span>
-            {" "}&
-            <span className="text-accent drop-shadow-lg"> {secondText}</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-lg">
-            Transforming industries through innovative solutions that simplify complex challenges across Africa
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 text-lg font-semibold backdrop-blur-sm bg-white/10 transition-all duration-300">
-              Learn More
-            </Button>
-          </div>
         </div>
       </section>
 
